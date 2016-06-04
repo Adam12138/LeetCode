@@ -1,0 +1,23 @@
+#include "stdafx.h"
+#include<iostream>
+#include<string>
+using namespace std;
+
+string convert(string s, int nRows){
+	if (nRows == 1) return s;
+	
+	string res[5];
+	int i = 0, j, gap = nRows - 2;
+	while (i < s.size()){
+		for (j = 0; i < s.size() && j < nRows; ++j) 
+			res[j] += s[i++];
+		for (j = gap; i < s.size() && j > 0; --j) 
+			res[j] += s[i++];
+		cout << res[0] << endl << res[1] << endl << res[2] << endl << res[3] << endl << res[4] << endl << "*******************" << endl;
+	}
+	string str = "";
+	for (i = 0; i < nRows; ++i)
+		str += res[i];
+	cout << str << endl;
+	return str;
+}
