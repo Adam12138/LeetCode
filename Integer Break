@@ -10,3 +10,7 @@ public:
         return res * n;
     }
 };
+
+
+
+// http://www.cnblogs.com/grandyang/p/5411919.html
