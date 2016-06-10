@@ -1,0 +1,14 @@
+//Find the contiguous subarray within an array (containing at least one number) which has the largest sum.
+
+Class Solution{
+  public:
+  int maxSubarray(int A[], int n){
+    int result = INT_MIN;
+    int f = 0;
+    for(int i=0;i<n;++i){
+      f = max(f + A[i],A[i]);
+      result = max(result,f);
+    }
+    return result;
+  }
+}
