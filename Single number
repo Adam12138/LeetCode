@@ -1,0 +1,13 @@
+public class Solution {
+    public int singleNumber(int[] A) {
+        int x = 0;
+	for (int a : A) {
+		x = x ^ a;
+	}
+	return x;
+    }
+}
+
+
+
+//All the numbers in the array are apear twice except one, find the single number.
