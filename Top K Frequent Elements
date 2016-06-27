@@ -6,17 +6,17 @@ Given [1,1,1,2,2,3] and k = 2, return [1,2].*/
 
 class Solution {
 public:
-static bool cmp_by_value(const pair<int,int>& lhs, const pair<int,int>& rhs) {  
-  return lhs.second > rhs.second;  
-}  
+    static bool cmp_by_value(const pair<int,int>& lhs, const pair<int,int>& rhs) {  
+      return lhs.second > rhs.second;  
+    }  
     vector<int> topKFrequent(vector<int>& nums, int k) {
         unordered_map<int, int> count;
         for(vector<int>::iterator it=nums.begin();it!=nums.end();++it)
             ++count[*it];
     vector<pair<int,int> > name_score_vec(count.begin(), count.end());  
-  sort(name_score_vec.begin(), name_score_vec.end(), cmp_by_value);  
-  vector<int>  result(k,0);
-  for (int i = 0; i <k; ++i) {  
+    sort(name_score_vec.begin(), name_score_vec.end(), cmp_by_value);  
+    vector<int>  result(k,0);
+    for (int i = 0; i <k; ++i) {  
      result[i]=name_score_vec[i].first;
     }  
         return result;
