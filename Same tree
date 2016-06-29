@@ -42,7 +42,7 @@ public:
 };
 
 
-//recursive
+//recursion
 class Solution {
 public:
     bool isSameTree(TreeNode* p, TreeNode* q) {
