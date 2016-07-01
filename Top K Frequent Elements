@@ -6,9 +6,6 @@ Given [1,1,1,2,2,3] and k = 2, return [1,2].*/
 
 class Solution {
 public:
-    static bool cmp_by_value(const pair<int,int>& lhs, const pair<int,int>& rhs) {  
-      return lhs.second > rhs.second;  
-    }  
     vector<int> topKFrequent(vector<int>& nums, int k) {
         unordered_map<int, int> count;
         for(vector<int>::iterator it=nums.begin();it!=nums.end();++it)
