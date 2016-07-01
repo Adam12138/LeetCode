@@ -13,11 +13,16 @@ public:
         unordered_map<int, int> count;
         for(vector<int>::iterator it=nums.begin();it!=nums.end();++it)
             ++count[*it];
-        vector<pair<int,int> > name_score_vec(count.begin(), count.end());  
-        sort(name_score_vec.begin(), name_score_vec.end(), cmp_by_value);  
-        vector<int>  result(k,0);
-        for (int i = 0; i <k; ++i) {  
-         result[i]=name_score_vec[i].first;
+        multimap<int,int,greater<int>> VecSort;
+        for( unordered_map<int, int>::iterator  it=count.begin();it!=count.end();++it)
+        {
+             VecSort.insert(pair<int, int>((it->second), it->first));
+        }
+
+        vector<int> result(k,0);
+        multimap<int,int>::iterator it=VecSort.begin();
+          for (int i = 0; i <k; ++i,++it) {  
+           result[i]=it->second;
         }  
         return result;
     }
